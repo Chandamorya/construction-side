@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#f4f7f4">
+   <meta name="description" content="Ghar aur commercial construction, renovation aur project planning ke liye bharosemand saathi.">
+   <title>Saarthi Nirman — Mazboot buniyad, behtar nirman</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+   <style>
+      :root {
+         --ink: #1d322e;
+         --muted: #60716c;
+         --paper: #f4f7f4;
+         --green: #d8ff63;
+         --coral: #ff735c;
+         --line: #dce5de;
+         --serif: Georgia, 'Times New Roman', serif;
+         --sans: 'DM Sans', sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); }
+      a { color: inherit; }
+      .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+
+      .topbar { height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+      .nav { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+      .brand { display: inline-flex; align-items: center; gap: 10px; font-family: 'Manrope', var(--sans); font-size: 18px; font-weight: 800; text-decoration: none; }
+      .brand-mark { width: 34px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: var(--green); font-size: 18px; }
+      .brand small { display: block; margin-top: -2px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: 0; }
+      .nav-links { display: flex; align-items: center; gap: 34px; }
+      .nav-links a { font-size: 13px; font-weight: 600; text-decoration: none; }
+      .nav-links a:hover { color: #527c1b; }
+      .nav-cta, .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 19px; border: 0; border-radius: 4px; background: var(--ink); color: white; font: 700 13px var(--sans); text-decoration: none; transition: transform .2s, background .2s; }
+      .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #31534a; }
+      .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--ink); font-size: 21px; cursor: pointer; }
+
+      .hero { min-height: 590px; position: relative; display: flex; align-items: center; overflow: hidden; background: #3b5149 url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85') center 44% / cover no-repeat; color: white; }
+      .hero::before { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgba(17, 39, 33, .88) 0%, rgba(17, 39, 33, .67) 46%, rgba(17, 39, 33, .08) 100%); }
+      .hero-content { position: relative; z-index: 1; width: min(650px, 100%); padding: 80px 0 96px; animation: rise-in .7s ease-out both; }
+      .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 0; text-transform: uppercase; }
+      .eyebrow::before { width: 25px; height: 2px; content: ''; background: currentColor; }
+      h1, h2, p { margin-top: 0; }
+      h1 { max-width: 620px; margin-bottom: 20px; font-family: 'Manrope', var(--sans); font-size: clamp(42px, 6vw, 72px); font-weight: 700; line-height: 1.06; letter-spacing: 0; }
+      h1 span { color: var(--green); }
+      .hero-copy { max-width: 480px; margin-bottom: 30px; color: #e4ece7; font-size: 16px; line-height: 1.75; }
+      .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+      .button-lime { background: var(--green); color: var(--ink); }
+      .button-lime:hover { background: #e5ff9a; color: var(--ink); }
+      .text-link { display: inline-flex; align-items: center; gap: 8px; color: white; font-size: 13px; font-weight: 700; text-decoration: none; }
+      .text-link span { color: var(--green); font-size: 19px; }
+      .hero-note { position: absolute; right: 0; bottom: 30px; z-index: 1; color: white; font-size: 11px; }
+
+      .trust-strip { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+      .trust-item { min-height: 108px; display: flex; align-items: center; gap: 15px; padding: 20px 26px; border-right: 1px solid var(--line); }
+      .trust-item:first-child { padding-left: 0; }
+      .trust-item:last-child { border-right: 0; }
+      .trust-icon { width: 38px; height: 38px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 50%; background: #e7efdf; color: #4a6d28; font-size: 17px; }
+      .trust-item strong { display: block; margin-bottom: 4px; font-size: 13px; }
+      .trust-item span:last-child { color: var(--muted); font-size: 12px; }
+
+      section.content-section { padding-block: 92px; }
+      .section-heading { max-width: 570px; margin-bottom: 38px; }
+      .section-heading .eyebrow { color: #648536; }
+      h2 { margin-bottom: 13px; font-family: 'Manrope', var(--sans); font-size: clamp(32px, 4vw, 46px); line-height: 1.12; letter-spacing: 0; }
+      .section-heading > p:last-child { margin-bottom: 0; color: var(--muted); font-size: 15px; line-height: 1.7; }
+      .services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+      .service { min-height: 230px; padding: 28px 28px 20px 0; border-bottom: 1px solid var(--line); }
+      .service + .service { padding-left: 28px; border-left: 1px solid var(--line); }
+      .service-number { margin-bottom: 34px; color: #82918b; font-size: 12px; }
+      .service h3 { margin: 0 0 10px; font-family: 'Manrope', var(--sans); font-size: 19px; }
+      .service p { max-width: 300px; margin-bottom: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+
+      .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; background: #e8efea; }
+      .about-image { min-height: 360px; background: #c8d6cc url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85') center / cover no-repeat; }
+      .about-copy { align-self: center; padding: 64px clamp(30px, 7vw, 88px); }
+      .about-copy .eyebrow { color: #648536; }
+      .about-copy h2 { font-size: clamp(30px, 3.5vw, 42px); }
+      .about-copy > p:not(.eyebrow) { margin-bottom: 24px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+      .about-points { display: flex; flex-wrap: wrap; gap: 10px 20px; font-size: 12px; font-weight: 700; }
+      .about-points span::before { margin-right: 7px; color: #709b35; content: '✓'; }
+
+      .contact { position: relative; display: grid; grid-template-columns: .8fr 1.2fr; align-items: start; gap: 42px; overflow: hidden; padding: 48px; background: var(--ink); color: white; }
+      .contact::after { position: absolute; top: -80px; right: 20%; width: 190px; height: 190px; border: 1px solid rgba(216, 255, 99, .2); border-radius: 50%; content: ''; box-shadow: 0 0 0 28px rgba(216, 255, 99, .04), 0 0 0 58px rgba(216, 255, 99, .03); }
+      .contact > * { position: relative; z-index: 1; }
+      .contact::after { pointer-events: none; }
+      .contact .eyebrow { color: var(--green); }
+      .contact h2 { max-width: 440px; margin-bottom: 14px; font-size: clamp(29px, 4vw, 42px); }
+      .contact-copy > p:last-child { margin-bottom: 0; color: #c1d0c9; font-size: 14px; line-height: 1.7; }
+      .enquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .form-field { display: grid; gap: 7px; }
+      .form-field-full { grid-column: 1 / -1; }
+      .form-field label { color: #e1e9e4; font-size: 12px; font-weight: 600; }
+      .form-field input, .form-field select, .form-field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #60736b; border-radius: 3px; outline: none; background: #263d35; color: white; font: 13px var(--sans); }
+      .form-field textarea { min-height: 88px; resize: vertical; }
+      .form-field input::placeholder, .form-field textarea::placeholder { color: #aebdb5; }
+      .form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color: var(--green); box-shadow: 0 0 0 2px rgba(216, 255, 99, .16); }
+      .form-field select option { background: #263d35; }
+      .form-submit { grid-column: 1 / -1; justify-self: start; cursor: pointer; }
+      .form-status { grid-column: 1 / -1; min-height: 18px; margin: -7px 0 0; color: var(--green); font-size: 12px; }
+      footer { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--muted); font-size: 11px; }
+      footer .brand { color: var(--ink); font-size: 15px; }
+
+      @keyframes rise-in { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+      @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+      @media (max-width: 760px) {
+         .wrap { width: min(100% - 36px, 600px); }
+         .topbar { height: 72px; }
+         .menu-toggle { display: block; }
+         .nav-links { position: absolute; top: 71px; right: 0; left: 0; z-index: 5; display: none; align-items: stretch; gap: 0; padding: 10px 18px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+         .nav-links.is-open { display: flex; flex-direction: column; }
+         .nav-links a { padding: 13px 4px; }
+         .nav-links .nav-cta { align-self: flex-start; margin-top: 7px; padding: 0 16px; }
+         .hero { min-height: 570px; background-position: 58% center; }
+         .hero::before { background: linear-gradient(90deg, rgba(17, 39, 33, .88), rgba(17, 39, 33, .42)); }
+         .hero-content { padding-block: 70px 90px; }
+         .hero-note { right: 18px; bottom: 18px; }
+         .trust-strip { grid-template-columns: 1fr; padding-block: 8px; }
+         .trust-item, .trust-item:first-child { min-height: 75px; padding: 13px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+         .trust-item:last-child { border-bottom: 0; }
+         section.content-section { padding-block: 66px; }
+         .services { grid-template-columns: 1fr; }
+         .service, .service + .service { min-height: 0; padding: 22px 0; border-left: 0; }
+         .service-number { margin-bottom: 18px; }
+         .about { grid-template-columns: 1fr; }
+         .about-image { min-height: 270px; }
+         .about-copy { padding: 42px 25px; }
+         .contact { grid-template-columns: 1fr; gap: 28px; padding: 38px 25px; }
+         .enquiry-form { grid-template-columns: 1fr; }
+         .form-field-full, .form-submit, .form-status { grid-column: auto; }
+         .contact::after { right: -30px; }
+         footer { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 24px; }
+      }
+   </style>
+</head>
+<body>
+   <header class="topbar">
+      <nav class="nav wrap" aria-label="Main navigation">
+         <a class="brand" href="#home" aria-label="Saarthi Nirman home">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Saarthi Nirman<small>CONSTRUCTION & RENOVATION</small></span>
+         </a>
+         <button class="menu-toggle" type="button" aria-label="Menu kholen" aria-expanded="false" aria-controls="nav-links">☰</button>
+         <div class="nav-links" id="nav-links">
+            <a href="#services">Hamari services</a>
+            <a href="#about">Hamare baare mein</a>
+            <a href="#contact">Sampark</a>
+            <a class="nav-cta" href="#contact">Contact us <span aria-hidden="true">↗</span></a>
+         </div>
+      </nav>
+   </header>
+
+   <main>
+      <section class="hero" id="home">
+         <div class="wrap">
+            <div class="hero-content">
+               <p class="eyebrow">Ghar se commercial project tak</p>
+               <h1>Mazboot buniyad,<br><span>behtareen nirman.</span></h1>
+               <p class="hero-copy">Naye ghar ka sapna ho ya purani jagah ko naya roop dena, planning se finishing tak kaam zimmedari aur quality ke saath.</p>
+               <div class="hero-actions">
+                  <a class="button button-lime" href="#services">Hamare kaam dekhein <span aria-hidden="true">→</span></a>
+                  <a class="text-link" href="#about">Hamare baare mein <span aria-hidden="true">↗</span></a>
+               </div>
+            </div>
+         </div>
+         <span class="hero-note">Soch se naqshay tak. Naqshay se haqeeqat tak.</span>
+      </section>
+
+      <div class="wrap trust-strip" aria-label="Hamare kaam ke usool">
+         <div class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span><div><strong>Quality material</strong><span>Har stage par quality check</span></div></div>
+         <div class="trust-item"><span class="trust-icon" aria-hidden="true">◷</span><div><strong>Saaf project planning</strong><span>Timeline aur budget pehle se clear</span></div></div>
+         <div class="trust-item"><span class="trust-icon" aria-hidden="true">♡</span><div><strong>Poora project support</strong><span>Planning se handover tak</span></div></div>
+      </div>
+
+      <section class="content-section wrap" id="services">
+         <div class="section-heading">
+            <p class="eyebrow">Construction ki har zaroorat</p>
+            <h2>Har project ke liye<br>sahi team.</h2>
+            <p>Residential build se commercial space aur renovation tak, har project ko sahi planning aur skilled workmanship ke saath poora karte hain.</p>
+         </div>
+         <div class="services">
+            <article class="service"><div class="service-number">01 / RESIDENTIAL</div><h3>Ghar ka construction</h3><p>Plot planning se finishing tak, aapke parivaar ki zarooraton ke mutaabik ghar ka nirman.</p></article>
+            <article class="service"><div class="service-number">02 / COMMERCIAL</div><h3>Commercial projects</h3><p>Office, shop aur business spaces ke liye practical planning aur bharosemand construction.</p></article>
+            <article class="service"><div class="service-number">03 / RENOVATION</div><h3>Renovation & repair</h3><p>Purane ghar ya workspace ko repair, upgrade aur thoughtful redesign se naya roop dein.</p></article>
+         </div>
+      </section>
+
+      <section class="about" id="about">
+         <div class="about-image" role="img" aria-label="Kaam ki planning karte hue ek chhoti team"></div>
+         <div class="about-copy">
+            <p class="eyebrow">Har detail par dhyaan</p>
+            <h2>Banate hain jagah, jo saalon chale.</h2>
+            <p>Construction ek bada faisla hai. Isliye hum scope, material aur timeline par khulkar baat karte hain, site par progress share karte hain, aur har stage mein workmanship ko ahmiyat dete hain.</p>
+            <div class="about-points"><span>Written estimate</span><span>Regular site updates</span><span>Quality workmanship</span></div>
+         </div>
+      </section>
+
+      <section class="content-section wrap" id="contact">
+         <div class="contact">
+            <div class="contact-copy">
+               <p class="eyebrow">Apne project par baat karein</p>
+               <h2>Construction ka plan hai? Shuruaat yahin se karein.</h2>
+               <p>Project ki basic details bhejiye, hum aapse baat karenge.</p>
+            </div>
+            <form class="enquiry-form" id="project-enquiry">
+               <div class="form-field">
+                  <label for="customer-name">Full name *</label>
+                  <input id="customer-name" name="name" autocomplete="name" placeholder="Full name" required>
+               </div>
+               <div class="form-field">
+                  <label for="customer-phone">Phone number *</label>
+                  <input id="customer-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+() -]{7,}" placeholder="98XXXXXXXX" required>
+               </div>
+               <div class="form-field">
+                  <label for="project-location">Project location</label>
+                  <input id="project-location" name="location" autocomplete="address-level2" placeholder="City">
+               </div>
+               <div class="form-field">
+                  <label for="project-type">Project ka type *</label>
+                  <select id="project-type" name="project" required>
+                     <option value="" disabled selected>Chunein</option>
+                     <option>Ghar ka construction</option>
+                     <option>Commercial project</option>
+                     <option>Renovation ya repair</option>
+                     <option>Doosra project</option>
+                  </select>
+               </div>
+               <div class="form-field form-field-full">
+                  <label for="project-details">Project ke baare mein *</label>
+                  <textarea id="project-details" name="details" placeholder="Kaam aur zaroorat ke baare mein thoda bataiye" required></textarea>
+               </div>
+               <button class="button button-lime form-submit" type="submit">Send enquiry <span aria-hidden="true">↗</span></button>
+               <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+         </div>
+      </section>
+   </main>
+
+   <footer class="wrap">
+      <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">S</span><span>Saarthi Nirman<small>CONSTRUCTION & RENOVATION</small></span></a>
+      <span>© <span id="year"></span> Saarthi Nirman. Mazboot buniyad, behtar nirman.</span>
+   </footer>
+   <script src="first.js"></script>
+</body>
+</html>
